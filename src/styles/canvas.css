@@ -1,0 +1,12 @@
+.canvas-section {
+  display: flex;
+  background-image: linear-gradient(to bottom, rgb(135, 0, 0), rgb(0, 0, 0) 100%);
+  justify-content: center;
+  align-items: center;
+}
+
+#myCanvas {
+  display: block;
+  padding: 0;
+  margin: 0; 
+}

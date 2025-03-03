@@ -1,0 +1,70 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #000000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile: 320px - 480px */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px; /* Smaller font for mobile */
+  }
+
+  .canvas-section {
+    height: 40vh; /* Reduce canvas height for smaller screens */
+  }
+
+  #myCanvas {
+    height: 100%; /* Ensure canvas fills the section */
+  }
+}
+
+/* Tablet: 481px - 768px */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .canvas-section {
+    height: 45vh; /* Adjust canvas height for tablets */
+  }
+
+  #myCanvas {
+    height: 100%;
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 769px) {
+  body {
+    font-size: 16px;
+  }
+
+  .canvas-section {
+    height: 50vh; /* Default height for larger screens */
+  }
+
+  #myCanvas {
+    height: 100%;
+  }
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.text-center h1 {
+  font-size: 2rem;
+  color: #fff;
+  padding: 1rem 0;
+}

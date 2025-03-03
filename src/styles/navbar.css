@@ -1,0 +1,160 @@
+/* Main navbar styles */
+.navbar {
+    color: white;
+    padding-bottom: 10px;
+    background-color: black;
+    position: relative; /* So the dropdown positions correctly */
+    z-index: 1000; /* Ensures navbar stays above content */
+}
+
+.navbar .navbar-list {
+    justify-content: start;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transition */
+    /* max-height: 0; Initially collapsed */
+    /* opacity: 0; Initially hidden */
+    overflow: hidden; /* Prevents content from spilling */
+}
+
+/* Navbar item styles */
+.navbar .navbar-list .navbar-item {
+    margin: 10px;
+    padding: 10px 30px;
+}
+
+.navbar .navbar-list .navbar-item:hover {
+    background-color: rgb(60, 60, 60);
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.navbar .navbar-list .navbar-item a {
+    text-decoration: none;
+    color: inherit;
+    font-size: larger;
+}
+
+.navbar .navbar-list .navbar-item a:visited {
+    color: inherit;
+}
+
+/* Hamburger menu (visible only on small screens) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Mobile: 320px - 480px */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        padding: 0.5rem;
+        background-color: transparent;
+    }
+
+    .navbar-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+        width: 100%;
+        background-color: black;
+        /* border-radius: 5px; */
+        border-bottom: 2px solid white;
+        border-top: 2px solid white;
+        padding: 1rem 0;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .navbar-item {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    .navbar-item a {
+        font-size: 16px;
+    }
+
+    /* Show the navbar when toggle is active */
+    .navbar .navbar-list.show {
+        max-height: 500px; /* Adjust this value depending on content */
+        opacity: 1;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Tablet: 481px - 768px */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navbar-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    .navbar-item {
+        margin: 1rem 0;
+    }
+
+    /* Show the navbar when toggle is active */
+    .navbar-list.show {
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 769px) {
+    .navbar {
+        flex-direction: row;
+        padding: 1rem 2rem;
+    }
+
+    .navbar-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0;
+        max-height: none;
+        opacity: 1;
+    }
+
+    .navbar-item {
+        margin: 0 1rem;
+    }
+}
