@@ -5,6 +5,15 @@
     <link rel="stylesheet" href="/src/styles/style.css" />
     <link rel="stylesheet" href="/src/styles/canvas.css" />
     <link rel="stylesheet" href="/src/styles/navbar.css" />
+    <link rel="stylesheet" href="/src/styles/about.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/zero-md@3?register"
+    ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luke Anglea</title>
   </head>
@@ -33,7 +42,43 @@
       </div>
     </section>
 
+    <section class="about-section">
+      <div class="about-container">
+        <div class="about-profile-picture">
+          <img
+            class="profile-picture"
+            src="/src/assets/images/exampleprofpic.jpg"
+          />
+        </div>
+        <div class="about-text">
+          <div id="markdown-content">
+            <zero-md src="src/assets/markdown/aboutMe.md">
+              <template>
+                <style>
+                  #markdown-content {
+                    background: none;
+                  }
+                </style>
+              </template>
+            </zero-md>
+          </div>
+        </div>
+      </div>
+    </section>
     <script type="module" src="/src/scripts/canvas.js"></script>
     <script type="module" src="/src/scripts/navbar.js"></script>
   </body>
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Luke Anglea. All Rights Reserved.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/yourusername" aria-label="GitHub"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/yourusername" aria-label="LinkedIn"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+      </div>
+    </div>
+  </footer>
 </html>

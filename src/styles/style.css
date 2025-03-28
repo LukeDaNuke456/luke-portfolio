@@ -54,7 +54,7 @@ body {
   }
 
   .canvas-section {
-    height: 50vh; /* Default height for larger screens */
+    height: 80vh; /* Default height for larger screens */
   }
 
   #myCanvas {
@@ -71,4 +71,30 @@ body {
   font-size: 2rem;
   color: #fff;
   padding: 1rem 0;
+}
+
+footer {
+  text-align: center;
+  border-top: 2px white solid;
+  padding: 1rem;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.footer-socials a i {
+  color: white;
+  font-size: 1.4rem;
+  margin-top: 4px;
+}
+
+.footer-socials a i:hover {
+  color: red;
+}
+
+footer p {
+  padding: 0;
+  margin: 0;
 }
