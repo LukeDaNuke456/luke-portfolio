@@ -1,40 +1,39 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles/style.css" />
+    <link rel="stylesheet" href="/src/styles/canvas.css" />
+    <link rel="stylesheet" href="/src/styles/navbar.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luke Anglea</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="/src/styles/style.css">
-  <link rel="stylesheet" href="/src/styles/canvas.css">
-  <link rel="stylesheet" href="/src/styles/navbar.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luke Anglea</title>
-</head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <div id="hamburger" class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <ul class="navbar-list" id="navbar-list">
+            <li class="navbar-item"><a href="#">Home</a></li>
+            <li class="navbar-item"><a href="#">About</a></li>
+            <li class="navbar-item"><a href="#">Projects</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-<body>
-  <header>
-    <div class="container">
-      <nav class="navbar">
-        <div id="hamburger" class="hamburger">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>        
-        <ul class="navbar-list" id="navbar-list">
-          <li class="navbar-item"><a href="#">Home</a></li>
-          <li class="navbar-item"><a href="#">About</a></li>
-          <li class="navbar-item"><a href="#">Projects</a></li>
-        </ul>
-      </nav>
-    </div>
-    <!-- Canvas Section -->
     <section class="canvas-section">
       <div class="container">
         <canvas id="myCanvas"></canvas>
       </div>
     </section>
-  </header>
-  <script type="module" src="/src/scripts/canvas.js"></script>
-  <script type="module" src="/src/scripts/navbar.js"></script>
-</body>
 
+    <script type="module" src="/src/scripts/canvas.js"></script>
+    <script type="module" src="/src/scripts/navbar.js"></script>
+  </body>
 </html>

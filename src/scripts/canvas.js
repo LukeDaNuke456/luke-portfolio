@@ -1,15 +1,17 @@
-import '../styles/style.css';
-
 class Canvas {
   constructor(canvasId, text1, text2) {
     this.canvas = document.getElementById(canvasId);
     this.ctx = this.canvas.getContext("2d");
     this.text1 = text1;
     this.text2 = text2;
-    this.opacity1 = 0; // Opacity for first text
-    this.opacity2 = 0; // Opacity for second text
-    this.fadeSpeed = 0.01;
-    this.fadeDelay = 50; // Delay before text 2 starts fading in
+    this.index1 = 0;
+    this.index2 = 0;
+    this.typingSpeed = 100;
+    this.fadeDelay = 1000;
+    this.cursorVisible = true;
+    this.cursorBlinkSpeed = 500;
+    this.isTypingComplete = false;
+    this.fontLoaded = false; // Flag to track font loading
 
     if (!this.canvas) {
       console.error(`Canvas with ID "${canvasId}" not found.`);
@@ -19,10 +21,27 @@ class Canvas {
     this.init();
   }
 
-  init() {
+  async init() {
+    await this.loadFont(); // Load font before drawing
     this.resizeCanvas();
-    this.startFadeIn();
+    this.startTypingEffect();
+    this.startCursorBlink();
     window.addEventListener("resize", () => this.resizeCanvas());
+  }
+
+  async loadFont() {
+    try {
+      const font = new FontFace(
+        "CustomFont",
+        'url("src/assets/fonts/VT323-Regular.ttf")',
+      );
+      await font.load();
+      document.fonts.add(font);
+      this.fontLoaded = true;
+      this.drawText(); // Ensure first draw after font is ready
+    } catch (error) {
+      console.error("Font failed to load:", error);
+    }
   }
 
   resizeCanvas() {
@@ -40,45 +59,79 @@ class Canvas {
   drawText() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    // Adjust font size dynamically (min 20px, max 40px)
-    const fontSize = Math.min(Math.max(20, this.canvas.width * 0.05), 40);
+    const fontSize = Math.min(Math.max(20, this.canvas.width * 0.09), 40);
 
-    this.ctx.font = `${fontSize}px Arial`;
+    // Ensure the font is only applied if it's fully loaded
+    if (this.fontLoaded) {
+      this.ctx.font = `${fontSize}px CustomFont`;
+    } else {
+      this.ctx.font = `${fontSize}px Arial`; // Fallback while waiting
+    }
+
     this.ctx.textAlign = "center";
     this.ctx.textBaseline = "middle";
+    this.ctx.fillStyle = `rgba(255, 255, 255, 1)`;
 
-    // Draw first text
-    this.ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity1})`;
-    this.ctx.fillText(this.text1, this.canvas.width / 2, this.canvas.height / 2 - 30);
+    const isTypingText1 = this.index1 < this.text1.length;
+    const isTypingText2 = !isTypingText1 && this.index2 < this.text2.length;
 
-    // Draw second text only when first text is fully visible
-    this.ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity2})`;
-    this.ctx.fillText(this.text2, this.canvas.width / 2, this.canvas.height / 2 + 40);
+    const cursor = this.cursorVisible ? "|" : " ";
+
+    let text1Displayed = this.text1.substring(0, this.index1);
+    let text2Displayed = this.text2.substring(0, this.index2);
+
+    if (isTypingText1) {
+      text1Displayed += cursor;
+    } else if (isTypingText2) {
+      text2Displayed += cursor;
+    } else {
+      text2Displayed += cursor;
+      this.isTypingComplete = true;
+    }
+
+    this.ctx.fillText(
+      text1Displayed,
+      this.canvas.width / 2,
+      this.canvas.height / 2 - 30,
+    );
+    this.ctx.fillText(
+      text2Displayed,
+      this.canvas.width / 2,
+      this.canvas.height / 2 + 40,
+    );
   }
 
-  startFadeIn() {
-    
-    let delayCounter = 0;
-    
-    const fadeIn = () => {
-      if (this.opacity1 < 1) {
-        this.opacity1 += this.fadeSpeed;
-      } else if (delayCounter < this.fadeDelay) {
-        delayCounter++; // Wait before starting Text 2 fade-in
-      } else if (this.opacity2 < 1) {
-        this.opacity2 += this.fadeSpeed;
-      }
-
-      this.drawText();
-
-      if (this.opacity2 < 1) {
-        requestAnimationFrame(fadeIn);
+  startTypingEffect() {
+    const typeText1 = () => {
+      if (this.index1 < this.text1.length) {
+        this.index1++;
+        this.drawText();
+        setTimeout(typeText1, this.typingSpeed);
+      } else {
+        setTimeout(typeText2, this.fadeDelay);
       }
     };
-    
-    fadeIn();
+
+    const typeText2 = () => {
+      if (this.index2 < this.text2.length) {
+        this.index2++;
+        this.drawText();
+        setTimeout(typeText2, this.typingSpeed);
+      } else {
+        this.isTypingComplete = true;
+      }
+    };
+
+    typeText1();
+  }
+
+  startCursorBlink() {
+    setInterval(() => {
+      this.cursorVisible = !this.cursorVisible;
+      this.drawText();
+    }, this.cursorBlinkSpeed);
   }
 }
 
-// Initialize the class with the canvas ID and text
+// Initialize the class
 new Canvas("myCanvas", "Hello, I'm Luke.", "Welcome to my page.");
