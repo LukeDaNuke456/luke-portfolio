@@ -27,6 +27,6 @@ hamburger.addEventListener("click", () => {
 menuLinks.forEach(link => {
   link.addEventListener("click", () => {
     mobileMenu.classList.add("hidden");
-    hamburger.classList.toggle("active");
+    hamburger.classList.remove("active");
   });
 });
