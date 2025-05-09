@@ -18,22 +18,22 @@
     <title>Luke Anglea</title>
   </head>
   <body>
-    <header class="bg-black text-white">
+    <header class="bg-black text-white fixed border-b border-gray-200 top-0 left-0 w-full z-50">
       <div class="w-full p-0 m-0">
-        <nav class="flex items-center justify-between px-6 py-6">
+        <nav class="flex items-center justify-between px-6 py-4">
           <div id="hamburger" class="space-y-1 cursor-pointer md:hidden">
             <div class="w-8 h-1 bg-white"></div>
             <div class="w-8 h-1 bg-white"></div>
             <div class="w-8 h-1 bg-white"></div>
           </div>
-          <ul id="navbar-list" class="hidden md:flex space-x-8 text-lg">
-            <li class="hover:text-gray-300"><a href="#">Home</a></li>
-            <li class="hover:text-gray-300"><a href="#">About</a></li>
-            <li class="hover:text-gray-300"><a href="#">Projects</a></li>
+          <ul id="navbar-list" class="hidden md:flex space-x-2 text-lg">
+            <li><a class="px-4 py-2 hover:bg-red-900 rounded-md cursor-pointer" href="#">Home</a></li>
+            <li><a class="px-4 py-2 hover:bg-red-900 rounded-md cursor-pointer" href="#">About</a></li>
+            <li><a class="px-4 py-2 hover:bg-red-900 rounded-md cursor-pointer" href="#">Projects</a></li>
           </ul>
         </nav>
       </div>
-    </header> 
+    </header>    
     <section class="canvas-section flex justify-center items-center h-screen bg-gradient-to-b from-red-800 to-black">
       <div class="container mx-auto p-4">
         <canvas id="myCanvas" class="block p-0 m-0 w-full h-full rounded-lg shadow-lg bg-transparent"></canvas>
