@@ -12,5 +12,11 @@
   "devDependencies": {
     "prettier": "^3.5.3",
     "vite": "^6.1.0"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.5",
+    "marked": "^15.0.7",
+    "tailwindcss": "^4.0.0",
+    "zero-md": "^3.1.7"
   }
 }
