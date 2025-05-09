@@ -1,28 +1,16 @@
-import { SCREEN_BREAKPOINTS } from "./Constants/constants.js";
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("#navbar-list a");
 
-document.addEventListener("DOMContentLoaded", function () {
-  function toggleMenu() {
-    const navbarList = document.querySelector(".navbar-list");
-    if (window.innerWidth <= SCREEN_BREAKPOINTS.tablet) {
-      navbarList.classList.toggle("show");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const link = document.querySelector(`#nav-${entry.target.id}`);
+    if (entry.isIntersecting) {
+      navLinks.forEach((link) => link.classList.remove("active-link"));
+      link?.classList.add("active-link");
     }
-  }
-
-  function closeMenuOnClick() {
-    const navbarList = document.querySelector(".navbar-list");
-    if (window.innerWidth <= SCREEN_BREAKPOINTS.tablet) {
-      navbarList.classList.remove("show");
-    }
-  }
-
-  const menuItems = document.querySelectorAll(".navbar-item a");
-
-  menuItems.forEach((item) => {
-    item.addEventListener("click", closeMenuOnClick);
   });
+}, { threshold: 0.6 });
 
-  const hamburger = document.getElementById("hamburger");
-  if (hamburger) {
-    hamburger.addEventListener("click", toggleMenu);
-  }
+sections.forEach((section) => {
+  observer.observe(section);
 });

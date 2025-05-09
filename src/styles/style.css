@@ -15,8 +15,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
+}
+
+.active-link {
+  @apply bg-red-800;
 }
 
 /* Mobile: 320px - 480px */
