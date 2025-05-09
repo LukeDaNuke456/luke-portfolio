@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/src/styles/canvas.css" />
   <link rel="stylesheet" href="/src/styles/navbar.css" />
   <link rel="stylesheet" href="/src/styles/about.css" />
+  <link rel="stylesheet" href="/src/styles/hamburger.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
   <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,31 +18,30 @@
   <header class="bg-black text-white fixed border-b border-gray-200 top-0 left-0 w-full z-50">
     <div class="w-full p-0 m-0">
       <nav class="flex items-center justify-between px-6 py-4">
-        <div id="hamburger" class="space-y-1 cursor-pointer md:hidden">
-          <div class="w-8 h-1 bg-white"></div>
-          <div class="w-8 h-1 bg-white"></div>
-          <div class="w-8 h-1 bg-white"></div>
+        <div id="hamburger" class="hamburger md:hidden">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
         </div>
         <ul id="navbar-list" class="hidden md:flex items-center space-x-4 text-lg">
           <li>
             <div class="w-8 h-8 rounded-full overflow-hidden shadow-md border-2 border-gray-200">
-              <a class="cursor-pointer" href="#"><img class="object-cover w-full h-full"
-                  src="/src/assets/images/ProfessionalProfilePic.jpeg" alt="Profile Picture" /></a>
+              <a href="#"><img class="object-cover w-full h-full" src="/src/assets/images/ProfessionalProfilePic.jpeg" alt="Profile Picture" /></a>
             </div>
           </li>
-          <li>
-            <a id="nav-home" class="px-4 py-2 hover:bg-red-900 rounded-md cursor-pointer transition duration-200"
-              href="#home">Home</a>
-          </li>
-          <li>
-            <a id="nav-about" class="px-4 py-2 hover:bg-red-900 rounded-md cursor-pointer transition duration-200"
-              href="#about">About</a>
-          </li>
-          <li>
-            <a id="nav-projects" class="px-4 py-2 hover:bg-red-900 rounded-md cursor-pointer transition duration-200"
-              href="#projects">Projects</a>
-          </li>
+          <li><a id="nav-home" class="px-4 py-2 hover:bg-red-900 rounded-md transition duration-200" href="#home">Home</a></li>
+          <li><a id="nav-about" class="px-4 py-2 hover:bg-red-900 rounded-md transition duration-200" href="#about">About</a></li>
+          <li><a id="nav-projects" class="px-4 py-2 hover:bg-red-900 rounded-md transition duration-200" href="#projects">Projects</a></li>
         </ul>
+      
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden absolute top-13 left-0 w-full bg-black text-white border-t border-gray-200 shadow-lg md:hidden">
+          <ul class="flex flex-col items-start space-y-2 p-4">
+            <li><a href="#home" class="block px-4 py-2 hover:bg-red-900 rounded-md">Home</a></li>
+            <li><a href="#about" class="block px-4 py-2 hover:bg-red-900 rounded-md">About</a></li>
+            <li><a href="#projects" class="block px-4 py-2 hover:bg-red-900 rounded-md">Projects</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
   </header>
@@ -75,7 +75,7 @@
     </div>
   </section>
   <section id="projects" class="py-8 scroll-mt-16 bg-black">
-    <div class="container mx-auto px-2">
+    <div class="container mx-auto px-8">
       <h2 class="text-2xl font-bold text-center mb-6">My Projects</h2>
       <div class="grid gap-4 sm:gap-6 md:gap-8 lg:gap-10 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
         <div class="rounded-lg bg-black border border-gray-200">
@@ -107,7 +107,7 @@
   <script type="module" src="/src/scripts/canvas.js"></script>
   <script type="module" src="/src/scripts/navbar.js"></script>
 </body>
-<footer>
+<footer class="border-t border-white text-white">
   <div class="footer-container">
     <p>&copy; 2025 Luke Anglea. All Rights Reserved.</p>
     <div class="footer-socials">
