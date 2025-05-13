@@ -41,3 +41,16 @@ Welcome to the source code for my personal portfolio website! This project showc
    ```bash
    git clone https://github.com/your-username/luke-portfolio.git
    cd luke-portfolio
+   ```
+
+2. Install Dependencies
+``` npm install ```
+
+3. Open your browser and navigate to: 
+`http://localhost:3000`
+
+5. To build the project for production: 
+`npm run build`
+
+6. Preview the production build: 
+`npm run preview`
