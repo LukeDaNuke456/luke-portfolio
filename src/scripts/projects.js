@@ -34,16 +34,18 @@ fetch('/json/projects.json')
                 const githubLink = document.createElement('a');
                 githubLink.href = project.github;
                 githubLink.target = '_blank';
-                githubLink.className = 'bg-gray-700 text-white px-3 py-1 rounded hover:bg-gray-600';
+                githubLink.rel = 'noopener noreferrer';
                 githubLink.textContent = 'GitHub';
+                githubLink.className = 'bg-gray-700 text-white px-3 py-1 rounded hover:bg-gray-600';
                 linksContainer.appendChild(githubLink);
             }
-            
+
             if (project.liveDemo) {
                 
                 const liveDemoLink = document.createElement('a');
                 liveDemoLink.href = project.liveDemo;
                 liveDemoLink.target = '_blank';
+                liveDemoLink.rel = 'noopener noreferrer';
                 liveDemoLink.className = 'bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-500';
                 liveDemoLink.textContent = 'Live Demo';
                 linksContainer.appendChild(liveDemoLink);
