@@ -9,8 +9,6 @@ Welcome to the source code for my personal portfolio website! This project showc
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup and Installation](#setup-and-installation)
-- [Project Structure](#project-structure)
-- [License](#license)
 
 ---
 
