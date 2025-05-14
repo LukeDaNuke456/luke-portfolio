@@ -36,19 +36,20 @@ Welcome to the source code for my personal portfolio website! This project showc
 ## Setup and Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/your-username/luke-portfolio.git
    cd luke-portfolio
    ```
 
 2. Install Dependencies
-``` npm install ```
+   `npm install`
 
-3. Open your browser and navigate to: 
-`http://localhost:3000`
+3. Open your browser and navigate to:
+   `http://localhost:3000`
 
-5. To build the project for production: 
-`npm run build`
+4. To build the project for production:
+   `npm run build`
 
-6. Preview the production build: 
-`npm run preview`
+5. Preview the production build:
+   `npm run preview`
