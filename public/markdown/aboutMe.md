@@ -1,23 +1,25 @@
-## Background
+### Background
 
-Hello! I'm Luke, and I'm currently writing this introduction in markdown format to be inserted into my website. This is my way of sharing a bit about myself.
+Hello! I'm Luke, a Computer Science graduate from the University of Arkansas with about 4 years of experience.
+After obtaining my degree, I began my career as a software engineer in the retail industry, where I discovered my
+passion for building innovative solutions
+that meet clients' needs and drive business success.
 
-I am a passionate Software Engineer with experience in backend development, system optimization, and automating complex processes to improve performance and scalability. I currently work at Gateway Apps and previously worked with Dillard's Inc. and Field Agent, where I developed solutions to enhance efficiency, reduce technical debt, and improve system functionality.
+I currently work at Gateway Apps and have previously worked at Dillard's Inc. and Field Agent. At Dillard's, I built backend
+services for data retrieval, cleaned up databases, refactored code for scalability, and wrote automated tests for
+Spring Boot and Angular applications. At Field Agent, I helped develop the Plum Marketplace and built a web scraping tool using
+Django and Vue.js.
 
-At Dillard's Inc., I designed backend services for dynamic data retrieval, implemented processes to clean up databases, and refactored codebases for better scalability. I also wrote automated tests to ensure the reliability of Spring Boot and Angular applications, while authoring detailed documentation that improved team collaboration and project efficiency.
-
-During my time at Field Agent, I contributed to the development of the Plum Marketplace and built a web scraping tool using Django and Vue.js to improve site performance. My work also included optimizing application speed through better utilization of CPU cores.
-
-I am deeply committed to writing clean, maintainable code, automating tasks, and ensuring systems are both efficient and secure. My experience spans Java, Python, Spring Boot, Angular, Django, Vue.js, and SQL, and I continuously look for opportunities to improve my skills while contributing to innovative projects.
+In my free time, I enjoy golfing, shotgun sports, and working on personal coding projects.
 
 ### Education
 
-- **Marion High School**, Class of 2018
 - **University of Arkansas**, B.A. in Computer Science, Class of 2023
+- **Marion High School**, Class of 2018
 
 ### Professional Experience
 
 - **Gateway Apps**, Software Engineer I _(December 2024 - Present)_
 - **Dillard's, Inc.**, Programmer / Analyst _(May 2023 - December 2024)_
-- **Field Agent, LLC**, Software Engineering Intern _(May 2022 - August 2022)_
+- **Field Agent**, Software Engineering Intern _(May 2022 - August 2022)_
 - **University of Arkansas System**, IT Intern _(July 2021 - May 2022)_
