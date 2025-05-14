@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/src/styles/style.css" />
-    <link rel="stylesheet" href="/src/styles/canvas.css" />
     <link rel="stylesheet" href="/src/styles/navbar.css" />
     <link rel="stylesheet" href="/src/styles/about.css" />
     <link rel="stylesheet" href="/src/styles/hamburger.css" />
@@ -118,33 +117,32 @@
     </section>
 
     <section id="about" class="py-8 scroll-mt-16 bg-black">
-      <div class="max-w-4xl mx-auto p-4 rounded-xl">
-        <div class="flex flex-col md:flex-row items-center gap-32">
-          <div
-            class="w-60 h-60 rounded-full overflow-hidden shadow-lg border-4 border-gray-200"
-          >
-            <img
-              class="object-cover w-full h-full"
-              src="/images/ProfessionalProfilePic.jpeg"
-              alt="Profile Picture"
-            />
-          </div>
-          <div class="flex-1 px-4">
-            <div id="markdown-content" class="prose">
-              <zero-md src="/markdown/aboutMe.md">
-                <template>
-                  <style>
-                    #markdown-content {
-                      background: none;
-                    }
-                  </style>
-                </template>
-              </zero-md>
-            </div>
-          </div>
+  <div class="max-w-4xl mx-auto p-4 rounded-xl">
+    <div class="flex flex-col md:flex-row items-start gap-8">
+      <div class="w-60 h-60 rounded-full overflow-hidden shadow-lg border-4 border-gray-200">
+        <img
+          class="object-cover w-full h-full"
+          src="/images/ProfessionalProfilePic.jpeg"
+          alt="Profile Picture"
+        />
+      </div>
+      <div class="flex-1 px-4">
+        <div id="markdown-content" class="prose">
+          <zero-md src="/markdown/aboutMe.md">
+            <template>
+              <style>
+                #markdown-content {
+                  background: none;
+                }
+              </style>
+            </template>
+          </zero-md>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
 
     <section id="projects" class="py-8 scroll-mt-16 bg-black">
       <div class="container mx-auto px-8">
