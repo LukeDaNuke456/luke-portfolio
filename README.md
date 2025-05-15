@@ -1,6 +1,6 @@
 # Luke Anglea Portfolio
 
-Welcome to the source code for my personal portfolio website! This project showcases my skills, projects, and experience as a developer. It is built with modern web technologies and is designed to be responsive and visually appealing.
+This project showcases my skills, projects, and experience as a developer. It is built with modern web technologies and is designed to be responsive and visually appealing.
 
 ---
 
