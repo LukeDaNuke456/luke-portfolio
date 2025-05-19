@@ -5,7 +5,7 @@ fetch("/json/projects.json")
     projects.forEach((project) => {
       const card = document.createElement("div");
       card.className =
-        "project-card bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden transition transform hover:scale-105 hover:bg-white hover:text-black";
+        "project-card bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden transition transform hover:scale-105";
 
       const img = document.createElement("img");
       img.src = project.image;
