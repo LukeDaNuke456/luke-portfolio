@@ -33,7 +33,7 @@ class Canvas {
     try {
       const font = new FontFace(
         "CustomFont",
-        'url("/fonts/VT323-Regular.ttf")',
+        'url("fonts/VT323-Regular.ttf")',
       );
       await font.load();
       document.fonts.add(font);
