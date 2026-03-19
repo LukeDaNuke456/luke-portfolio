@@ -1,23 +1,26 @@
 [
   {
-    "title": "Personal Portfolio",
-    "description": "A personal portfolio website to showcase my projects.",
-    "image": "images/portpic.png",
-    "github": "https://github.com/LukeDaNuke456/luke-portfolio",
-    "liveDemo": ""
+    "title": "SkyPeek",
+    "description": "A React Router SPA that displays weather information for a specified location using data from the national weather service API. (In progress) ",
+    "image": "images/skyPeek.jpg",
+    "github": "https://github.com/LukeDaNuke456",
+    "liveDemo": "",
+    "tags": ["React Router", "TypesScript", "TailwindCSS", "DaisyUI"]
   },
   {
-    "title": "Financial Calculator",
-    "description": "A simple .Net project using uPlot and HTMX. (In progress)",
-    "image": "images/fillerImage.jpg",
-    "github": "https://github.com/LukeDaNuke456/luke-portfolio",
-    "liveDemo": ""
+    "title": "Chips",
+    "description": "A tool for tracking performace data for individuals and teams who participate in shotgun sports. (In progress)",
+    "image": "images/chips.jpg",
+    "github": "https://github.com/LukeDaNuke456",
+    "liveDemo": "",
+    "tags": ["Next.js", "TypesScript", "PostgreSQL", "Prisma", "Supabase"]
   },
   {
-    "title": "Tracky",
-    "description": "A React Router application that aids in tracking vehicle maintenance. (In progress)",
-    "image": "images/fillerImage.jpg",
-    "github": "https://github.com/LukeDaNuke456/luke-portfolio",
-    "liveDemo": ""
+    "title": "Self Hosted Minecraft Server",
+    "description": "A Dockerized PaperMC Minecraft server with automated backups and scheduled restarts. Designed for easy deployment to a remote host via a single deploy script over Tailscale SSH. (In progress)",
+    "image": "images/minecraftServerImage.png",
+    "github": "https://github.com/LukeDaNuke456",
+    "liveDemo": "",
+    "tags": ["Docker", "Shell Scripting", "Tailscale", "Ubuntu"]
   }
 ]

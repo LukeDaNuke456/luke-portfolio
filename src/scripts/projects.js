@@ -1,65 +1,42 @@
-fetch("json/projects.json")
-  .then((response) => response.json())
-  .then((projects) => {
-    const container = document.getElementById("projects-container");
-    projects.forEach((project) => {
-      const card = document.createElement("div");
-      card.className =
-        "project-card bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden transition transform hover:scale-105";
+async function loadProjects() {
+  const container = document.getElementById("projects-container");
+  try {
+    const response = await fetch("json/projects.json");
+    const projects = await response.json();
 
-      const img = document.createElement("img");
-      img.src = project.image;
-      img.alt = project.title;
-      img.className = "w-full h-48 object-cover";
-      card.appendChild(img);
+    container.innerHTML = projects
+      .map(
+        ({ title, description, image, github, liveDemo, tags }, index) => `
+      <div class="bg-white/5 backdrop-blur-md text-white rounded-xl shadow-lg overflow-hidden border border-white/10 transition-all duration-300 hover:scale-[1.02] hover:bg-white/10 hover:shadow-xl fade-in flex flex-col" style="transition-delay: ${index * 100}ms">
+        <div class="relative group overflow-hidden">
+          <img src="${image}" alt="${title}" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute inset-0 bg-red-900/0 group-hover:bg-red-900/20 transition-colors duration-300"></div>
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="text-xl font-semibold mb-1 text-white">${title}</h3>
+          ${
+            tags?.length
+              ? `<div class="flex flex-wrap gap-1 mb-3">${tags.map((t) => `<span class="text-xs px-2 py-0.5 rounded-full bg-red-950 text-red-400 border border-red-900">${t}</span>`).join("")}</div>`
+              : ""
+          }
+          <p class="text-gray-400 text-sm mb-4">${description}</p>
+          <div class="flex gap-2 mt-auto">
+            ${github ? `<a href="${github}" target="_blank" rel="noopener noreferrer" class="text-sm px-3 py-1.5 rounded-lg bg-gray-700 text-white hover:bg-gray-600 transition-colors">GitHub</a>` : ""}
+            ${liveDemo ? `<a href="${liveDemo}" target="_blank" rel="noopener noreferrer" class="text-sm px-3 py-1.5 rounded-lg bg-red-700 text-white hover:bg-red-600 transition-colors">Live Demo</a>` : ""}
+          </div>
+        </div>
+      </div>
+    `,
+      )
+      .join("");
 
-      const content = document.createElement("div");
-      content.className = "p-4";
-
-      const title = document.createElement("h3");
-      title.className = "text-xl font-semibold mb-2";
-      title.textContent = project.title;
-      content.appendChild(title);
-
-      const description = document.createElement("p");
-      description.className = "mb-4";
-      description.textContent = project.description;
-      content.appendChild(description);
-
-      const linksContainer = document.createElement("div");
-      linksContainer.className = "flex gap-2";
-
-      if (project.github) {
-        const githubLink = document.createElement("a");
-        githubLink.href = project.github;
-        githubLink.target = "_blank";
-        githubLink.rel = "noopener noreferrer";
-        githubLink.textContent = "GitHub";
-        githubLink.className =
-          "bg-gray-700 text-white px-3 py-1 rounded hover:bg-gray-600";
-        linksContainer.appendChild(githubLink);
-      }
-
-      if (project.liveDemo) {
-        const liveDemoLink = document.createElement("a");
-        liveDemoLink.href = project.liveDemo;
-        liveDemoLink.target = "_blank";
-        liveDemoLink.rel = "noopener noreferrer";
-        liveDemoLink.className =
-          "bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-500";
-        liveDemoLink.textContent = "Live Demo";
-        linksContainer.appendChild(liveDemoLink);
-      }
-
-      content.appendChild(linksContainer);
-      card.appendChild(content);
-
-      container.appendChild(card);
-    });
-  })
-  .catch((error) => {
+    window.initFadeObserver?.();
+  } catch (error) {
     console.error("Failed to fetch projects:", error);
-    const container = document.getElementById("projects-container");
     container.innerHTML =
-      '<p class="text-red-500">Failed to load projects. Please try again later.</p>';
-  });
+      '<p class="text-red-400 col-span-full text-center">Failed to load projects. Please try again later.</p>';
+  }
+}
+
+loadProjects();

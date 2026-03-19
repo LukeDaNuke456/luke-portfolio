@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luke Anglea</title>
     <link rel="stylesheet" href="/src/styles/style.css" />
-    <link rel="stylesheet" href="/src/styles/hamburger.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
@@ -12,24 +13,25 @@
       type="module"
       src="https://cdn.jsdelivr.net/npm/zero-md@3?register"
     ></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luke Anglea</title>
   </head>
 
   <body>
     <header
-      class="bg-black text-white fixed border-b border-gray-200 top-0 left-0 w-full z-50"
+      class="bg-black/60 backdrop-blur-md text-white fixed border-b border-white/10 top-0 left-0 w-full z-50"
     >
       <div class="w-full p-0 m-0">
         <nav class="flex items-center justify-between px-6 py-4">
-          <div id="hamburger" class="hamburger md:hidden">
+          <a href="#home" class="text-2xl font-bold tracking-tight">
+            <span class="text-white">Luke Anglea </span>
+          </a>
+          <div id="hamburger" class="hamburger md:hidden ml-auto">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
           </div>
           <ul
             id="navbar-list"
-            class="hidden md:flex items-center space-x-4 text-lg"
+            class="hidden md:flex items-center space-x-4 text-lg ml-auto"
           >
             <li>
               <a
@@ -60,7 +62,7 @@
           <!-- Mobile Dropdown Menu -->
           <div
             id="mobile-menu"
-            class="hidden absolute top-13 left-0 w-full bg-black text-white border-t border-gray-200 shadow-lg md:hidden"
+            class="hidden absolute top-13 left-0 w-full bg-black/70 backdrop-blur-md text-white border-t border-white/10 shadow-lg md:hidden"
           >
             <ul class="flex flex-col items-start space-y-2 p-4">
               <li>
@@ -92,23 +94,50 @@
 
     <section
       id="home"
-      class="canvas-section flex justify-center items-center h-screen scroll-mt-20 py-8 bg-gradient-to-b from-red-800 to-black"
+      class="hero-section flex flex-col justify-center items-center scroll-mt-20 px-4 relative"
     >
-      <div class="container mx-auto p-4">
-        <canvas
-          id="myCanvas"
-          class="block p-0 m-0 w-full h-full rounded-lg shadow-lg bg-transparent"
-        ></canvas>
+      <div class="hero-content flex flex-col items-center text-center">
+        <h1 class="typewriter-line1">Hello, I'm Luke.</h1>
+        <p class="typewriter-line2">Welcome to my page.</p>
+        <p
+          class="text-lg md:text-xl text-gray-300 mt-4 tracking-wide font-light hero-subtitle"
+        >
+          Software Engineer
+        </p>
+        <div class="flex gap-4 mt-8 hero-cta">
+          <a
+            href="#projects"
+            class="px-6 py-2.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all duration-300 text-sm font-medium"
+            >View My Work</a
+          >
+          <a
+            href="https://github.com/LukeDaNuke456"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-6 py-2.5 rounded-lg border border-red-500/50 text-red-400 hover:bg-red-500/10 transition-all duration-300 text-sm font-medium"
+            >GitHub</a
+          >
+        </div>
       </div>
+      <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
     </section>
 
-    <section id="about" class="py-8 scroll-mt-16 bg-black">
-      <div class="max-w-6xl mx-auto p-4 rounded-xl">
+    <section id="about" class="py-16 scroll-mt-2 bg-black">
+      <div class="max-w-6xl mx-auto p-4">
+        <div class="text-center mb-12 fade-in">
+          <p class="text-xs uppercase tracking-widest text-red-400 mb-2">
+            Get To Know Me
+          </p>
+          <h2 class="text-3xl font-bold text-white">About Me</h2>
+          <div class="w-16 h-1 bg-red-600 rounded-full mx-auto mt-4"></div>
+        </div>
         <div
-          class="flex flex-col md:flex-row items-center md:items-start justify-center gap-x-20"
+          class="flex flex-col md:flex-row items-center md:items-start justify-center gap-x-20 fade-in"
         >
           <div
-            class="w-50 h-50 md:w-70 md:h-70 rounded-full overflow-hidden shadow-lg border-4 border-gray-200 self-center md:self-start mb-8 mt-6"
+            class="w-50 h-50 md:w-70 md:h-70 rounded-full overflow-hidden shadow-[0_0_30px_rgba(239,68,68,0.2)] ring-2 ring-red-500/30 self-center md:self-start mb-8 mt-6 shrink-0"
           >
             <img
               class="object-cover w-full h-full"
@@ -121,50 +150,127 @@
               <zero-md src="markdown/aboutMe.md">
                 <template>
                   <style>
-                    #markdown-content {
-                      background: none;
+                    :host {
+                      color: #f1f5f9;
+                    }
+                    h3 {
+                      color: #ef4444;
+                      font-size: 1.25rem;
+                      font-weight: 600;
+                      margin-top: 1.5rem;
+                      margin-bottom: 0.5rem;
+                    }
+                    p,
+                    li {
+                      color: #cbd5e1;
+                      line-height: 1.7;
+                    }
+                    ul {
+                      padding-left: 1.25rem;
+                    }
+                    li {
+                      margin-bottom: 0.25rem;
+                    }
+                    strong {
+                      color: #f1f5f9;
+                    }
+                    em {
+                      color: #94a3b8;
                     }
                   </style>
                 </template>
               </zero-md>
+            </div>
+            <div class="mt-10 fade-in">
+              <h3 class="text-lg font-semibold text-white mb-4">Tech Stack</h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1.5 text-sm rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-gray-300"
+                  >JavaScript</span
+                >
+                <span
+                  class="px-3 py-1.5 text-sm rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-gray-300"
+                  >Java</span
+                >
+                <span
+                  class="px-3 py-1.5 text-sm rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-gray-300"
+                  >SQL</span
+                >
+                <span
+                  class="px-3 py-1.5 text-sm rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-gray-300"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1.5 text-sm rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-gray-300"
+                  >ReactRouter</span
+                >
+                <span
+                  class="px-3 py-1.5 text-sm rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-gray-300"
+                  >SolidJs</span
+                >
+                <span
+                  class="px-3 py-1.5 text-sm rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-gray-300"
+                  >Docker</span
+                >
+                <span
+                  class="px-3 py-1.5 text-sm rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-gray-300"
+                  >.NET</span
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="py-8 scroll-mt-16 bg-black">
-      <div class="container mx-auto px-8">
-        <h2 class="text-2xl font-bold text-center mb-6">My Projects</h2>
+    <section
+      id="projects"
+      class="py-20 scroll-mt-16 bg-gradient-to-b from-red-950/20 to-black"
+    >
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="text-center mb-12 fade-in">
+          <p class="text-xs uppercase tracking-widest text-red-400 mb-2">
+            What I've Built
+          </p>
+          <h2 class="text-3xl font-bold text-white">My Projects</h2>
+          <div class="w-16 h-1 bg-red-600 rounded-full mx-auto mt-4"></div>
+        </div>
       </div>
       <div
         id="projects-container"
-        class="container mx-auto px-8 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        class="max-w-6xl mx-auto px-8 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
       ></div>
     </section>
 
-    <footer class="border-t border-white text-white">
+    <footer
+      class="text-white bg-black/60 backdrop-blur-md border-t border-white/10"
+    >
       <div class="footer-container">
-        <p>&copy; 2025 Luke Anglea. All Rights Reserved.</p>
+        <p class="text-sm text-gray-400 tracking-wide mb-3">Let's Connect</p>
         <div class="footer-socials">
-          <a href="https://github.com/LukeDaNuke456"
-             aria-label="GitHub"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            href="https://github.com/LukeDaNuke456"
+            aria-label="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="fa-brands fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/luke-anglea-597b1a196"
-             aria-label="LinkedIn"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/in/luke-anglea-597b1a196"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="fa-brands fa-linkedin"></i>
           </a>
         </div>
+        <p class="text-xs text-gray-500 mt-3">
+          &copy; 2025 Luke Anglea. All Rights Reserved.
+        </p>
       </div>
     </footer>
 
-
-    <script type="module" src="/src/scripts/canvas.js"></script>
     <script type="module" src="/src/scripts/navbar.js"></script>
     <script type="module" src="/src/scripts/projects.js"></script>
   </body>

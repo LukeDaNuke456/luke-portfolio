@@ -1,16 +1,10 @@
 ### Background
 
-Hello! I'm Luke, a Computer Science graduate from the University of Arkansas with about 4 years of experience.
-After obtaining my degree, I began my career as a software engineer in the retail industry, where I discovered my
-passion for building innovative solutions
-that meet clients' needs and drive business success.
+I'm a software engineer based in Arkansas. Since graduating from the University of Arkansas in 2023, I've worked across retail technology and marketplace platforms — building Spring Boot APIs, refactoring legacy code, and shipping features with Angular, Vue.js, and React.
 
-I currently work at Gateway Apps and have previously worked at Dillard's Inc. and Field Agent. At Dillard's, I built backend
-services for data retrieval, cleaned up databases, refactored code for scalability, and wrote automated tests for
-Spring Boot and Angular applications. At Field Agent, I helped develop the Plum Marketplace and built a web scraping tool using
-Django and Vue.js.
+I currently work at Gateway Apps, a software consulting firm, where no two projects look the same. I've had the chance to build software for clients like Haag Brown and Nucor, which keeps the work varied and genuinely interesting.
 
-In my free time, I enjoy golfing, shotgun sports, and working on personal coding projects.
+Outside of work, I'm usually on the golf course or competing in shotgun sports.
 
 ### Education
 
@@ -19,7 +13,7 @@ In my free time, I enjoy golfing, shotgun sports, and working on personal coding
 
 ### Professional Experience
 
-- **Gateway Apps**, Software Engineer I _(December 2024 - Present)_
-- **Dillard's, Inc.**, Programmer / Analyst _(May 2023 - December 2024)_
-- **Field Agent**, Software Engineering Intern _(May 2022 - August 2022)_
-- **University of Arkansas System**, IT Intern _(July 2021 - May 2022)_
+- **[Gateway Apps, LLC](https://gatewayapps.com/)**, Software Engineer I _(December 2024 - Present)_
+- **[Dillard's, Inc.](https://www.dillards.com/)**, Programmer / Analyst _(May 2023 - December 2024)_
+- **[Field Agent](https://app.fieldagent.net/)**, Software Engineering Intern _(May 2022 - August 2022)_
+- **[University of Arkansas System](https://uasys.edu/)**, IT Intern _(July 2021 - May 2022)_

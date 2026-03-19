@@ -33,3 +33,26 @@ menuLinks.forEach((link) => {
     hamburger.classList.remove("active");
   });
 });
+
+// Scroll-triggered fade-in animations
+const fadeObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 },
+);
+
+function initFadeObserver() {
+  document.querySelectorAll(".fade-in:not(.observed)").forEach((el) => {
+    el.classList.add("observed");
+    fadeObserver.observe(el);
+  });
+}
+
+initFadeObserver();
+window.initFadeObserver = initFadeObserver;
