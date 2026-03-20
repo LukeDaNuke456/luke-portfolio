@@ -1,38 +1,53 @@
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("#navbar-list a");
+const scrollIndicator = document.querySelector(".scroll-indicator");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      const link = document.querySelector(`#nav-${entry.target.id}`);
-      if (entry.isIntersecting) {
-        navLinks.forEach((link) => link.classList.remove("active-link"));
-        link?.classList.add("active-link");
-      }
-    });
-  },
-  { threshold: 0.6 },
-);
+function setActiveLink(sectionId) {
+  navLinks.forEach((link) => {
+    link.classList.toggle("active-link", link.id === `nav-${sectionId}`);
+  });
 
-sections.forEach((section) => {
-  observer.observe(section);
-});
+  scrollIndicator?.classList.toggle("scroll-indicator--hidden", sectionId !== "home");
+}
 
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobile-menu");
-const menuLinks = mobileMenu.querySelectorAll("a");
+function getScrollActivationLine() {
+  const header = document.querySelector(".site-header");
+  const headerHeight = header?.offsetHeight ?? 0;
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  mobileMenu.classList.toggle("hidden");
-});
+  return headerHeight + 24;
+}
 
-menuLinks.forEach((link) => {
+function updateActiveLink() {
+  const activationLine = window.scrollY + getScrollActivationLine() + 80;
+  let activeSectionId = sections[0]?.id;
+
+  sections.forEach((section) => {
+    if (activationLine >= section.offsetTop) {
+      activeSectionId = section.id;
+    }
+  });
+
+  if (activeSectionId) {
+    setActiveLink(activeSectionId);
+  }
+}
+
+navLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    mobileMenu.classList.add("hidden");
-    hamburger.classList.remove("active");
+    const targetId = link.getAttribute("href")?.replace("#", "");
+    if (targetId) {
+      setActiveLink(targetId);
+      requestAnimationFrame(updateActiveLink);
+      window.setTimeout(updateActiveLink, 120);
+    }
   });
 });
+
+updateActiveLink();
+window.addEventListener("scroll", updateActiveLink, { passive: true });
+window.addEventListener("resize", updateActiveLink);
+window.addEventListener("hashchange", updateActiveLink);
+window.addEventListener("load", updateActiveLink);
 
 // Scroll-triggered fade-in animations
 const fadeObserver = new IntersectionObserver(

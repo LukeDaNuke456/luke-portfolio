@@ -1,0 +1,39 @@
+@keyframes cursor-stop {
+  to { border-right-color: transparent; }
+}
+
+@keyframes typing-16 {
+  from { width: 0; }
+  to { width: 16ch; }
+}
+
+@keyframes typing-19 {
+  from { width: 0; }
+  to { width: 19ch; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #ef4444; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

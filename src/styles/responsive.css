@@ -1,0 +1,49 @@
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0.85rem 0;
+  }
+
+  .site-header__inner {
+    width: min(100% - 1rem, 72rem);
+  }
+
+  .site-nav {
+    min-height: 3.6rem;
+    padding: 0.45rem 0.5rem;
+    border-radius: 1.4rem;
+  }
+
+  .site-nav__links {
+    gap: 0.15rem;
+  }
+
+  .nav-link {
+    min-height: 2.35rem;
+    padding: 0.55rem 0.8rem;
+    font-size: 0.88rem;
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    font-size: 16px;
+  }
+
+  .site-nav {
+    justify-content: center;
+    padding-right: 0.65rem;
+    padding-left: 0.65rem;
+  }
+}
